@@ -1,5 +1,5 @@
 <?php
-$template = "<!DOCTYPE html><html><head><meta charset='UTF-8'><style>img {display: block;}</style></head><body><table cellpadding='0' cellspacing='0' border='0'  style='font-size:16px; font-family: Verdana, Arial, Ubuntu, Helvetica, sans-serif; line-height: 25px;' width='500'><tr><td style='background-color: #009ee0; padding:10px;'><span style='color: #fff; font-size: 18px; font-weight: bold;'>Patrício Lessa</span><br/></td>";
+$template = "<!DOCTYPE html><html><head><meta charset='UTF-8'><style>img {display: block;}</style></head><body><table cellpadding='0' cellspacing='0' border='0'  style='font-size:16px; font-family: Verdana, Arial, Ubuntu, Helvetica, sans-serif; line-height: 25px;' width='500'><tr><td style='background-color: #009ee0; padding:10px;'><span style='color: #fff; font-size: 18px; font-weight: bold;'>Project</span><br/></td>";
 
 if (isset($_POST['Assunto'])){
     $template .= "<td  style='background-color:#4a4a4a; padding: 10px; font-size: 15px; font-weight: bold; color: #fff'>" . $_POST['Assunto'] . "</td>";

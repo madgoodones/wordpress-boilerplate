@@ -1,6 +1,6 @@
 <?php
 if( ! defined( 'ABSPATH' ) ) {
-    header( 'Location: /patricio' );
+    header( 'Location: /' );
     exit;
 }
 ?>

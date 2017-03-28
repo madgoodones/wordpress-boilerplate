@@ -13,7 +13,7 @@
 <meta name="msapplication-navbutton-color" content="#FFF">
 <meta name="msapplication-TileColor" content="#FFF">
 <title><?php wp_title('-', true, 'right'); bloginfo(); ?></title>
-<link rel="alternate" href="<?php bloginfo('url') ?>" hreflang="pt-BR">
+<link rel="alternate" href="<?php bloginfo('url') ?>" hreflang="pt-br">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
