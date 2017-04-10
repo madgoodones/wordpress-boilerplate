@@ -65,6 +65,8 @@ add_filter ( 'upload_mimes' ,  'habilitarMimes' ) ;
 require_once('inc/wordpress/create-menu.php');
 // Criar post types
 require_once('inc/wordpress/create-post-types.php');
+// Criar post types
+require_once('inc/wordpress/setting-theme.php');
 
 // Remover informações padrões do wordpress
 function my_deregister_scripts(){

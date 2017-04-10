@@ -1,1 +1,0 @@
-Partes do tema

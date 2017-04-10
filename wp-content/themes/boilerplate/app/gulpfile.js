@@ -5,7 +5,7 @@ cleanCSS = require('gulp-clean-css'),
 plumber = require('gulp-plumber'),
 imagemin = require('gulp-imagemin'),
 uglify = require('gulp-uglify'),
-rename = require('gulp-rename'),
+concat = require('gulp-concat'),
 jeet        = require('jeet'),
 rupture     = require('rupture'),
 koutoSwiss  = require('kouto-swiss'),
@@ -13,7 +13,7 @@ sourcemaps = require('gulp-sourcemaps');
 
 // Copiar todos os arquivos
 gulp.task('copy', function() {
-    return gulp.src(['./{font}/**/*'])
+    return gulp.src(['./{fonts,vendor}/**/*'])
         .pipe(gulp.dest('../assets/'));
 });
 
@@ -34,20 +34,31 @@ gulp.task('stylus', function(){
 });
 
 // Minificar JS
+var scripts = [
+    '../vendor/jquery/dist/jquery.js',
+    '../vendor/bootstrap/dist/js/bootstrap.js',
+    '../vendor/owl.carousel/dist/owl.carousel.js',
+    '../vendor/jquery-validation/dist/jquery.validate.js',
+    '../vendor/jquery-form/dist/jquery.form.min.js',
+    '../vendor/fullpage.js/dist/jquery.fullpage.js',
+    './js/*.js'
+];
 gulp.task('uglify', function(){
-    return gulp.src('js/main.js')
-        .pipe(rename('bundle.js'))
+    return gulp.src(scripts)
         .pipe(plumber())
-        .pipe(uglify())
+        .pipe(sourcemaps.init({loadMaps: true}))
+            .pipe(concat('bundle.js'))
+            .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('../assets/js/'));
 });
 
 // Minificar CSS
 gulp.task('minify-css', function() {
   return gulp.src('css/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.init({loadMaps: true}))
+            .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('../assets/css/'));
 });
 

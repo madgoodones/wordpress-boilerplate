@@ -1,9 +1,9 @@
 /* Logo */
 .login h1 a {
-	background-image: url('');
+	background-image: url('./madgo.png');
 	background-size: 100%;
-	width: 250px;
-	height: 53px;
+	width: 78px;
+	height: 78px;
 }
 /* Background */
 body.login {
@@ -11,10 +11,10 @@ body.login {
 }
 
 .login #backtoblog a, .login #nav a {
-	color: #bc8a12;
+	color: #bc1212;
 }
 .login #backtoblog a:hover, .login #nav a:hover {
-	color: #eab127;
+	color: #ef7171;
 }
 
 .login form {
@@ -29,6 +29,11 @@ body.login {
 	-moz-text-shadow: none;
 	-moz-box-shadow: none;
 	border: 0;
-	background-color: #bc8a12;
+	background-color: #bc1212;
 	color:  #000;
+}
+
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+	background-color: #ef7171;
+	color: #000;
 }

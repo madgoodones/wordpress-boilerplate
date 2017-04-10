@@ -1,1 +1,0 @@
-$(document).on("ready",function(o){console.log("test")});
