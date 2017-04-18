@@ -35,12 +35,12 @@ gulp.task('stylus', function(){
 
 // Minificar JS
 var scripts = [
-    '../vendor/jquery/dist/jquery.js',
-    '../vendor/bootstrap/dist/js/bootstrap.js',
-    '../vendor/owl.carousel/dist/owl.carousel.js',
-    '../vendor/jquery-validation/dist/jquery.validate.js',
-    '../vendor/jquery-form/dist/jquery.form.min.js',
-    '../vendor/fullpage.js/dist/jquery.fullpage.js',
+    './vendor/jquery/dist/jquery.js',
+    './vendor/bootstrap/dist/js/bootstrap.js',
+    './vendor/owl.carousel/dist/owl.carousel.js',
+    './vendor/jquery-validation/dist/jquery.validate.js',
+    './vendor/jquery-form/dist/jquery.form.min.js',
+    './vendor/fullpage.js/dist/jquery.fullpage.js',
     './js/*.js'
 ];
 gulp.task('uglify', function(){
@@ -57,7 +57,7 @@ gulp.task('uglify', function(){
 gulp.task('minify-css', function() {
   return gulp.src('css/*.css')
     .pipe(sourcemaps.init({loadMaps: true}))
-            .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('../assets/css/'));
 });

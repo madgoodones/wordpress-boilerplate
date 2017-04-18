@@ -3,19 +3,31 @@
 * Post Types
 */
 function create_post_types() {
-  register_post_type( 'slug-name',
+  register_post_type( 'produto',
     array(
       'labels'        => array(
-      'name'          => __( 'Name' ),
-      'singular_name' => __( 'Singular Name' )
+      'name'          => __( 'Produto' ),
+      'singular_name' => __( 'Produto' )
       ),
-      'taxonomies'    => array('category'),
       'public'        => true,
-      'has_archive'   => true,
-      'rewrite'       => array('slug' => 'slug-name'),
-      'menu_icon'     => 'dashicons-nametag',
-      'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'page-attributes', 'revisions' ),
+      'has_archive'   => false,
+      'hierarchical'  => false,
+      'exclude_from_search' => false,
+      'capability_type' => 'post',
+      'publicly_queryable' => true,
+      'rewrite'       => array('slug' => 'produto'),
+      'menu_icon'     => 'dashicons-cart',
+      'supports'      => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'revisions' ),
     )
   );
 }
 // add_action( 'init', 'create_post_types' );
+
+function create_taxonomy() {
+    register_taxonomy( 'tipo-de-produto', 'produto', array(
+        'label'        => __( 'Tipos de produto', 'textdomain' ),
+        'rewrite'      => array( 'slug' => 'tipo-de-produto' ),
+        'hierarchical' => true,
+    ) );
+}
+//add_action( 'init', 'create_taxonomy', 0 );
