@@ -32,6 +32,7 @@ gulp.task('stylus', function(){
     .pipe(stylus({
         use:[koutoSwiss(), jeet(), rupture()],
         'resolve url': true,
+        // 'include css': true,
         define: {
             url: require('stylus').resolver()
         }
