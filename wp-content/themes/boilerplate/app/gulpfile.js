@@ -1,14 +1,16 @@
 var gulp = require('gulp'),
 stylus = require('gulp-stylus'),
 clean = require('gulp-clean'),
-cleanCSS = require('gulp-clean-css'),
+cssnano = require('cssnano'),
 plumber = require('gulp-plumber'),
 imagemin = require('gulp-imagemin'),
 uglify = require('gulp-uglify'),
 concat = require('gulp-concat'),
 jeet        = require('jeet'),
 rupture     = require('rupture'),
+postcss = require('gulp-postcss'),
 koutoSwiss  = require('kouto-swiss'),
+autoprefixer = require('autoprefixer'),
 sourcemaps = require('gulp-sourcemaps');
 
 // Copiar todos os arquivos
@@ -28,7 +30,11 @@ gulp.task('stylus', function(){
     gulp.src('stylus/main.styl')
     .pipe(plumber())
     .pipe(stylus({
-        use:[koutoSwiss(), prefixer(), jeet(), rupture()]
+        use:[koutoSwiss(), jeet(), rupture()],
+        'resolve url': true,
+        define: {
+            url: require('stylus').resolver()
+        }
     }))
     .pipe(gulp.dest('css/'))
 });
@@ -37,10 +43,8 @@ gulp.task('stylus', function(){
 var scripts = [
     './vendor/jquery/dist/jquery.js',
     './vendor/bootstrap/dist/js/bootstrap.js',
-    './vendor/owl.carousel/dist/owl.carousel.js',
     './vendor/jquery-validation/dist/jquery.validate.js',
     './vendor/jquery-form/dist/jquery.form.min.js',
-    './vendor/fullpage.js/dist/jquery.fullpage.js',
     './js/*.js'
 ];
 gulp.task('uglify', function(){
@@ -55,9 +59,13 @@ gulp.task('uglify', function(){
 
 // Minificar CSS
 gulp.task('minify-css', function() {
+    var plugins = [
+        autoprefixer({grid: false}),
+        cssnano()
+    ];
   return gulp.src('css/*.css')
     .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(postcss(plugins))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('../assets/css/'));
 });
