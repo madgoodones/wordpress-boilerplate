@@ -1,0 +1,102 @@
+.button
+	transition(.5s all ease-in-out)
+	display inline-block
+	padding rem(8px 15px)
+	margin 0
+	outline 0
+	border 0
+	color $black
+	text-decoration none
+	background-color #f2f2f2
+	&:hover
+	&:focus
+		text-decoration none !important
+		background-color darken(#f2f2f2, 10)
+		
+	&-outline
+		background-color transparent
+		color $white
+		border 1px solid $white
+		&:hover
+		&:focus
+			background-color $white
+			color #0b2e4a
+			
+	&-white-blue-dark
+		font-weight 600
+		background-color $white
+		color #0b2e4a
+		&:hover
+		&:focus
+			background-color #69cbf7
+			color $white
+			
+	&-white-wine
+		font-weight 600
+		background-color $white
+		color #42131d
+		&:hover
+		&:focus
+			background-color #42131d
+			color $white
+			
+	&-red
+		font-weight 600
+		background-color #98181d
+		color $white
+		&:hover
+		&:focus
+			background-color darken(#98181d, 20%)
+			color $white
+			
+	&-blue
+		font-weight 600
+		background-color #3372a4
+		color $white
+		&:hover
+		&:focus
+			background-color darken(#3372a4, 40%)
+			color $white
+		
+	&-block
+		display block !important
+		width 100%
+		text-align center
+		
+.button-prev,
+.button-next
+	position relative
+	display inline-block
+	size: 20px
+	border 0
+	background-color transparent
+	outline 0
+	&:hover
+	&:focus
+		outline 0
+	&:after, &:before
+		transform(rotate(-130deg))
+		position absolute
+		content ''
+		left 0
+		right 0
+		height 1px
+		top 1px
+		background-color #AFEFD3
+	&:before
+		transform(rotate(130deg))
+		top 17px
+		
+.button-prev
+	transform(rotate(180deg))
+	
+.button-img-next
+	size: 95px, 38px
+	border 0
+	cursor pointer
+	background-color transparent
+	background-image url('../img/next.png')
+	contain()
+	&:hover
+	&:focus
+		outline 0

@@ -1,0 +1,136 @@
+$our_black = #363636
+$our_blue = #3372a4
+$our_red = #98181d
+
+.our-history
+	position relative
+	padding rem(20px 0 0)
+	background-color #f4ecdf
+		
+	&-overlay-bottom
+		position absolute
+		bottom 0
+		left 0
+		right 0
+		width 100%
+		height 150px
+		background-image linear-gradient( transparent, #e8e1d4 )
+		
+	&-arrowdown
+		display none
+		position absolute
+		bottom 15px
+		left 1px
+		right 0
+		width 100%
+		text-align center
+		z-index 1
+		+above(768px)
+			display block
+	
+	&-timeline
+		position relative
+		
+	&-content
+		transition(.5s all ease-in-out)
+		clearfix()
+		max-width 702px
+		margin 0 auto
+		padding-bottom rem(24px)
+		overflow auto
+		zoom 1
+		opacity 0
+		+above(702px)
+			overflow visible
+			&:first-child
+				padding-top rem(30px)
+		+below(454px)
+			text-align center
+		&:nth-of-type(odd)
+			+above(454px)
+				.our-history-content-text,
+				.our-history-content-image
+					float right
+					text-align left
+		
+		&.show
+			opacity 1
+		
+		&-corda
+			display none
+			opacity 0
+			visibility hidden
+			+above(500px)
+				absolute: 0
+				z-index 0
+				display block
+				size: 20px, 100%
+				margin 0 auto
+				opacity 1
+				visibility visible
+				background-color #d2d2d2
+			
+		&-space
+			display none
+			width 100%
+			height 150px
+			+above(768px)
+				display block
+		
+		&-text
+			position relative
+			display inline-block
+			max-width 250px
+			padding rem(0 15px)
+			margin-bottom rem(15px)
+			font-size rem(11px)
+			text-align center
+			+above(454px)
+				display block
+				width 250px
+				margin 0
+				text-align right
+				float left
+				
+			p
+				font-size rem(15px)
+				font-weight 600
+			
+			.title
+				position relative
+				display inline-block
+				margin-bottom rem(10px)
+				font-size rem(13px)
+				font-weight 600
+				text-transform uppercase
+				color $our_blue
+				
+				.year
+					font-size rem(20px)
+					font-weight 600
+					color $our_black
+					
+		+above(702px)
+			position relative
+			&-text:before
+				content ''
+				position absolute
+				top 12px
+				left -88px
+				width 95px
+				height 3px
+				background-color $our_red
+			&:nth-of-type(even)
+				.our-history-content-text:before
+					left auto
+					right -89px
+				
+		&-image
+			display inline-block
+			width 227px
+			margin-bottom rem(10px)
+			+above(454px)
+				display block
+				margin-bottom 0
+				float left
+		

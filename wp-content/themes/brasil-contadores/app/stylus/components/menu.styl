@@ -1,0 +1,209 @@
+// vars
+$menu_red = #c44a4d
+$menu_black = #313131
+// css
+.menu
+	transition(.5s all ease-in-out)
+	position fixed
+	z-index 5
+	top 29px
+	right 0
+	left 0
+	padding 0
+	background-color $menu_black
+	+above(1170px)
+		padding rem(10px 0)
+		background-color transparent
+	&.active
+		padding rem(5px 0)
+		background-color $menu_black
+		
+	&__brand
+		margin rem(10px 0)
+
+	&__checked
+		visibility hidden
+		display none
+
+		&:checked ~ .menu__nav
+			top 95px
+			opacity 1
+			visibility visible
+			background-color darken($menu_black, 30%)
+			+above(1170px)
+				background-color transparent
+
+		&:checked ~ .menu__burger
+			padding 18px 7px 22px 7px
+
+			.menu__burger__btn
+				height 0
+				&:after, &:before
+					top 0
+				&:after
+					transform(rotate(45deg))
+				&:before
+					transform(rotate(-45deg))
+
+	&__burger
+		position absolute
+		display block
+		top 12px
+		right 15px
+		padding 18px 7px
+		margin 0
+		cursor pointer
+		background-color transparent
+		+above(1170px)
+			visibility hidden
+			display none
+
+		&__btn
+			transition(.5s all ease-in-out)
+			position relative
+			display block
+			width 40px
+			height 5px
+			border-radius 5px
+			background-color $menu_red
+			border 0
+			outline 0
+			&:after, &:before
+				transition(.5s all ease-in-out)
+				position absolute
+				content ''
+				left 0
+				right 0
+				height 5px
+				border-radius 5px
+				top 10px
+				background-color $menu_red
+			&:before
+				top -10px
+				background-color $menu_red
+
+	&__nav
+		position fixed
+		top -100%
+		right 0
+		left 0
+		z-index -1
+		opacity 0
+		visibility hidden
+		padding rem(11px)
+
+		ul
+			margin 0
+			padding 0
+			text-align center
+			+above(1170px)
+				text-align center
+			&.dropdown-menu 
+				li
+					width 100%
+					padding rem(3px 10px)
+					+above(1170px)
+						text-align left
+					a
+						display block
+						padding rem(15px 5px)
+						color $black
+				& > .active > a
+					background-color #ebebeb
+					&:hover
+					&:focus
+						background-color #ebebeb
+
+		li
+			list-style none
+
+			a
+				transition(.3s all ease-in-out)
+				position relative
+				display block
+				padding rem(5px)
+				color $white
+				font-size rem(18px)
+				font-weight 600
+				letter-spacing 1.3px
+				text-transform uppercase
+				outline 0
+				cursor pointer
+				&:hover
+				&:focus
+					color $menu_red
+					text-decoration none
+				+above(1170px)
+					padding rem(16px 15px)
+					font-size 13px
+					
+			&.button-phone
+				position relative
+				margin rem(7px 0 0)
+				border 1px solid $white
+				a
+					display inline-block
+					position relative
+					padding rem(5px 15px 7px 35px)
+					&:hover
+					&:focus
+						&:after
+							size: 0px
+					&:before
+						position absolute
+						top 14px
+						left 15px
+						content '\f095'
+						font: normal normal normal 14px/1 FontAwesome;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+						font-size rem(16px)
+						color $menu_red
+						
+		+below(1169px)
+			transition(.5s all ease-in)
+
+		+above(1170px)
+			position static
+			padding rem(7px 0)
+			opacity 1
+			visibility visible
+			li
+				display inline-block			
+
+				&.button-phone
+					margin rem(7px 5px 0)
+					float right
+					a:before
+						top 11px
+						font-size rem(14px)
+				
+	.brand
+		display none
+		opacity 0
+		visibility hidden
+		
+	+below(1170px)
+		.brand
+			display block
+			opacity 1
+			visibility visible
+			&-white
+				display none
+				opacity 0
+				visibility hidden
+							
+	&.active
+				
+		.menu__nav li.active a
+			color $menu_red
+		
+		.brand
+			display block
+			opacity 1
+			visibility visible
+			
+		.brand-white
+			display none
+			opacity 0
+			visibility hidden	

@@ -1,0 +1,83 @@
+.carousel
+	position relative
+	
+	&-arrowdown
+		position absolute
+		bottom 25px
+		left 0
+		right 0
+		width 100%
+		text-align center
+	
+	&-indicators
+		z-index 1
+		li
+			width 15px
+			height 2px
+			background-color $white
+			border-radius 0
+			
+			&.active
+				width 15px
+				height 2px
+				border 2px solid $white
+				border-radius 0
+	
+	&-inner
+		position relative
+		
+		.item
+			cover()
+			height 100vh
+			min-height 500px
+			+above(768px)
+				background-attachment fixed
+			
+			&-caption
+				vertical-center(-50%)
+				left 0
+				right 0
+				max-width 1250px
+				width 100%
+				margin 0 auto
+				padding rem(45px 15px 0)
+				z-index 2
+				color $white
+				+above(600px)
+					font-size rem(30px)
+					p
+						font-size rem(30px)
+				
+				h1,h2,h3,h4,h5,h6, .title
+					display block
+					font-size rem(32px)
+					font-weight 700
+					margin rem(0 0 10px)
+					padding 0
+					text-transform uppercase
+					color $white
+					line-height 1.2
+					+above(600px)
+						font-size rem(48px)
+						
+			&-overlay
+				position absolute
+				height 100%
+				width 100%
+				top 0
+				left 0
+				overflow hidden
+				&:before
+					transform(rotate(180deg))
+					content ''
+					position absolute
+					top 0
+					width 100%
+					border-bottom 100vh solid alpha($black, 60%)
+					border-right 0px solid transparent
+					+above(900px)
+						border-left 200px solid transparent
+				+above(900px)
+					width 85%
+				+above(1170px)
+					width 60%

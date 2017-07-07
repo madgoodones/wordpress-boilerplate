@@ -1,0 +1,35 @@
+$menu_red = #c44a4d
+$menu_black = #313131
+
+.superior-menu
+	position fixed
+	z-index 10
+	top 0
+	left 0
+	right 0
+	width 100%
+	background-color darken($menu_black, 30%)
+	
+	ul
+		padding rem(7px 5px)
+		margin 0
+		list-style none
+		font-size 12px
+		
+		li
+			display inline-block
+			margin-right 10px
+			&:last-child
+				margin 0
+				
+			a
+				color $white
+				&:hover
+				&:focus
+					text-decoration none
+					
+				&.red
+					color $menu_red
+		
+	.menu-right
+		text-align right

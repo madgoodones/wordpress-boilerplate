@@ -1,0 +1,69 @@
+$services_blue = #0b2e4a
+
+.services-home
+	padding rem(25px 0 70px)
+	background-color #f4ebdd
+	
+	&-block
+		transition(.5s all ease-in-out)
+		cover()
+		position relative
+		display block
+		height 360px
+		margin rem(0 0 30px)
+		overflow hidden
+		color $white
+		text-align center
+		background-color $services_blue
+		background-image url('../img/contabilidade.jpg')
+		&:hover
+		&:focus
+			text-decoration none
+		
+		.header
+			transition(.5s all ease-in-out)
+			display table
+			table-layout fixed
+			width 100%
+			height 120px
+			margin-bottom rem(15px)
+			background-color alpha(#548cb8, 70%)
+			
+			.title
+				display table-cell
+				vertical-align middle
+				margin 0
+				padding rem(10px 15px)
+				font-size rem(22px)
+				font-weight 600
+				color $white
+				text-transform uppercase
+				
+		.content
+			transition(.5s all ease-in-out)
+			position absolute
+			right 0
+			bottom -70px
+			left 0
+			width 100%
+			padding rem(15px)
+			
+			&-image
+				margin 0
+				padding rem(0 70px 80px)
+				text-align right
+				
+		&:hover
+			box-shadow(inset 0 -200px 150px -60px alpha(#021e40, 70%))
+			.header
+				background-color alpha(#021e40, 70%)
+			.content
+				bottom 0
+				
+		+below(970px)
+			box-shadow(inset 0 -200px 150px -60px alpha(#021e40, 70%))
+			.header
+				background-color alpha(#021e40, 70%)
+			.content
+				bottom 0
+					

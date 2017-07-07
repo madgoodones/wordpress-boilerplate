@@ -1,0 +1,85 @@
+.banner
+	cover()
+	position relative
+	min-height 375px
+	height 375px
+	margin 0
+	
+	&.page
+		.banner-caption
+			margin-top rem(37px)
+			
+	&-caption
+		vertical-center(-50%)
+		left 0
+		right 0
+		width 100%
+		max-width 100%
+		padding rem(0 15px)
+		font-size rem(18px)
+		font-weight 600
+		text-align center
+		color $white
+		
+		.title, h1,h2,h3,h4,h5,h6
+			display block
+			margin 0
+			font-size rem(32px)
+			font-weight 600
+			color $white
+			text-transform uppercase
+			
+		p
+			font-size rem(18px)
+			font-weight 600
+			
+.sentence
+	background-color #0b2e4a
+	
+	&-image
+		width 100%
+		margin 0
+		padding rem(25px 15px)
+		text-align center
+		+above(768px)
+			width 40%
+			padding rem(100px 15px)
+			float right
+		img
+			max-height 180px
+			
+	&-content
+		width 100%
+		padding rem(25px 15px)
+		margin 0
+		color $white
+		text-align center
+		+above(768px)
+			vertical-center(-50%)
+			width 60%
+			left 0
+			
+		.author
+			font-size rem(15px)
+			font-weight 600
+			color #addfff
+			
+		.title, h1,h2,h3,h4,h5,h6
+			display block
+			margin rem(0 0 15px)
+			font-size rem(32px)
+			font-weight 600
+			color $white
+			
+.storys
+	cover()
+	padding rem(0 15px 50px)
+	color $black
+	background-color #626262
+	+above(768px)
+		padding rem(50px 15px 100px)
+	
+	.page-header
+		color $black
+		.title, h1,h2,h3,h4,h5,h6
+			color $black

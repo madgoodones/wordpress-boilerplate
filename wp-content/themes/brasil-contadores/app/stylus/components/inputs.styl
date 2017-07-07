@@ -1,0 +1,24 @@
+.labels
+	display block
+	margin-bottom rem(4px)
+	font-size rem(12px)
+	font-weight 300
+	color $white
+	
+.input-transparent,
+.input-outline
+	display block
+	max-width 100%
+	width 100%
+	padding rem(15px 10px 5px)
+	font-size rem(12px)
+	color $white
+	border 0
+	border 1px solid $white
+	background-color transparent
+	&:focus
+		outline 0
+		color $black
+		background-color $white
+	+placeholder()
+		color $white

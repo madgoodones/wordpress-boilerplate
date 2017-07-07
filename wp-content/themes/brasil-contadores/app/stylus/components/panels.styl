@@ -1,0 +1,76 @@
+//
+// Panels
+// --------------------------------------------------
+$panel_blue = #3372a4
+
+// Base class
+.panel
+  margin-bottom 0
+  border 0
+  border-radius 0
+  box-shadow 0 0 0 transparent
+  margin 0
+  
+.panel-group .panel + .panel
+  margin 0
+
+// Panel contents
+.panel-body
+  padding 10px
+  clearfix()
+
+// Optional heading
+.panel-heading,
+.panel-default > .panel-heading
+  padding 0
+  border 0
+  background-color transparent
+
+// Within heading, strip any `h*` tag of its default margins for spacing.
+.panel-title
+  margin 0
+  border 0
+  font-size rem(20px)
+  font-weight 600
+  color $panel_blue
+  text-align center
+  text-transform uppercase
+  background-color transparent
+  
+  a
+    display inline-block
+    position relative
+    padding rem(20px 15px)
+    margin rem(50px 0)
+    &:after
+      content ''
+      absolute: auto 0 8px auto
+      size: 30px, 16px
+      background-image url('../img/page-header-red.png')
+      
+    &.collapsed
+      display block
+      margin 0
+      text-align left
+      border-bottom 1px solid $black
+
+  > a,
+  > small,
+  > .small,
+  > small > a,
+  > .small > a
+    color inherit
+    text-decoration none
+    &:hover
+      text-decoration none
+      
+.collapse.in .panel-body
+  padding-bottom rem(50px)
+    
+.panel-body
+  transition(.5s all ease-in-out)
+  border 0
+  
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group
+  border 0

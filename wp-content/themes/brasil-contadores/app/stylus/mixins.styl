@@ -1,0 +1,48 @@
+// Mixins
+vertical-center(str)
+	position absolute
+	top 50%
+	-webkit-transform translateY(str)
+	-moz-transform translateY(str)
+	-o-transform translateY(str)
+	transform translateY(str)
+	
+transition(str)
+	-webkit-transition str
+	-moz-transition str
+	-o-transition str
+	transition str
+	
+cover()
+	background-position center
+	-webkit-background-size cover
+	-moz-background-size cover
+	-o-background-size cover
+	background-size cover
+	background-repeat no-repeat
+	
+contain()
+	background-position center
+	-webkit-background-size contain
+	-moz-background-size contain
+	-o-background-size contain
+	background-size contain
+	background-repeat no-repeat
+	
+transition-delay(str)
+	-webkit-transition-delay str
+	-moz-transition-delay str
+	-o-transition-delay str
+	transition-delay str
+	
+transform(str)
+	-ms-transform str
+	-webkit-transform str
+	-o-transform str
+	transform str
+	
+box-shadow(str)
+	-webkit-box-shadow str
+	-moz-box-shadow str
+	-o-box-shadow str
+	box-shadow str

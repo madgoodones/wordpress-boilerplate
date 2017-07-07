@@ -1,0 +1,61 @@
+.pictures
+	clearfix()
+	cover()
+	position relative
+	height rem(450px)
+	overflow hidden
+	zoom 1
+	background-image url('../img/office/picture-1.jpg')
+	+above(970px)
+		width 120%
+		
+	&-header
+		padding rem(0 15px)
+		color $white
+		text-align center
+		background-color #313131
+		.title
+			color $white
+
+	.picture
+		transition(.5s all ease-in)
+		column(2/4, gutter: 0)
+		position relative
+		min-height 50%
+		overflow hidden
+		border 1px solid $black
+		+above(970px)
+			transform(rotate(25deg))
+			column(2/8, gutter: 0)
+			height 200%
+			margin-top -225px
+			border 0
+			border-left 2px solid #a9a9a9
+			border-right 2px solid #a9a9a9
+			+above(1360px)
+				height 250%
+				margin-top -340px
+			&.active
+				width 50%
+				
+			&.desactive
+				width 16.6%
+		
+			&:first-child
+				border-left 4px solid #a9a9a9
+						
+			&:last-child
+				border-right 4px solid #a9a9a9
+				
+		&-content
+			absolute: 0
+			size: 100%
+			+above(970px)
+				transform(rotate(-25deg))
+				size: 200%, 100%
+				margin-left -50%
+
+		&-cover
+			cover()
+			absolute: 0
+			size: 100%
