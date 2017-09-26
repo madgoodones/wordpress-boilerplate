@@ -11,6 +11,7 @@ rupture     = require('rupture'),
 postcss = require('gulp-postcss'),
 koutoSwiss  = require('kouto-swiss'),
 autoprefixer = require('autoprefixer'),
+livereload = require('gulp-livereload'),
 sourcemaps = require('gulp-sourcemaps');
 
 // Copiar todos os arquivos
@@ -31,11 +32,11 @@ gulp.task('stylus', function(){
     .pipe(plumber())
     .pipe(stylus({
         use:[koutoSwiss(), jeet(), rupture()],
-        'resolve url': true,
-        // 'include css': true,
-        define: {
-            url: require('stylus').resolver()
-        }
+        // 'resolve url': true,
+        // include css': true,
+        // define: {
+        //     url: require('stylus').resolver()
+        // }
     }))
     .pipe(gulp.dest('css/'))
 });
@@ -46,8 +47,6 @@ var scripts = [
     './vendor/bootstrap/dist/js/bootstrap.js',
     './vendor/owl.carousel/dist/owl.carousel.js',
     './vendor/scrollreveal/dist/scrollreveal.js',
-    './vendor/waypoints/lib/jquery.waypoints.js',
-    './vendor/waypoints/lib/shortcuts/inview.js',
     './vendor/jquery-validation/dist/jquery.validate.js',
     './vendor/jquery-form/dist/jquery.form.min.js',
     './js/*.js'
@@ -59,6 +58,7 @@ gulp.task('uglify', function(){
             .pipe(concat('bundle.js'))
             .pipe(uglify())
         .pipe(sourcemaps.write('./'))
+        .pipe(livereload())
         .pipe(gulp.dest('../assets/js/'));
 });
 
@@ -72,6 +72,7 @@ gulp.task('minify-css', function() {
     .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(postcss(plugins))
     .pipe(sourcemaps.write('./'))
+    .pipe(livereload())
     .pipe(gulp.dest('../assets/css/'));
 });
 
@@ -80,12 +81,18 @@ gulp.task('imagemin', function() {
     return gulp.src('img/**/*')
         .pipe(plumber())
         .pipe(imagemin())
+        .pipe(livereload())
         .pipe(gulp.dest('../assets/img/'));
 });
 
 /* Alias */
 gulp.task('default', ['imagemin', 'stylus', 'minify-css', 'uglify', 'copy', 'watch']);
+gulp.task('build', ['imagemin', 'stylus', 'uglify', 'copy', 'minify-css']);
 gulp.task('watch', function(){
+    livereload.listen(35729);
+    gulp.watch('**/*.php').on('change', function(file) {
+      livereload.changed(file.path);
+    });
     gulp.watch('stylus/**/*.styl', ['stylus']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/**/*.js', ['uglify']);

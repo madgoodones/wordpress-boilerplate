@@ -16,7 +16,7 @@ if ($dataEmail == '' || $dataAssunto == '') {
   exit();
 }
 // Requires
-require_once('../../vendor/phpmailer/PHPMailerAutoload.php');
+require_once('phpmailer/PHPMailerAutoload.php');
 require_once('template.php');
 require_once('secret.php');
 

@@ -1,0 +1,9 @@
+{
+  "directory": "vendor",
+  "ignoredDependencies": [
+  	"jquery",
+  	"boostrap",
+  	"bootstrap-sass",
+    "bootstrap-sass-official"
+  ]
+}
