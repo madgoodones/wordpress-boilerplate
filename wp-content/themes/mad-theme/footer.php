@@ -85,8 +85,6 @@
 		</div>
 	</div>
 </footer>
-<?php get_template_part('partials/part', 'modal-work-with-us'); ?>
-<?php get_template_part('partials/part', 'modal-consult-specialist'); ?>
 <script type="text/javascript" src="<?= get_template_directory_uri() . '/assets/js/bundle.js' ?>" async></script>
 <?php wp_footer() ?>
 </body>

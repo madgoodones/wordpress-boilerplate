@@ -11,6 +11,7 @@ rupture     = require('rupture'),
 postcss = require('gulp-postcss'),
 koutoSwiss  = require('kouto-swiss'),
 autoprefixer = require('autoprefixer'),
+flexibility = require('postcss-flexibility'),
 livereload = require('gulp-livereload'),
 sourcemaps = require('gulp-sourcemaps');
 
@@ -32,23 +33,21 @@ gulp.task('stylus', function(){
     .pipe(plumber())
     .pipe(stylus({
         use:[koutoSwiss(), jeet(), rupture()],
-        // 'resolve url': true,
-        // include css': true,
-        // define: {
-        //     url: require('stylus').resolver()
-        // }
+        'resolve url': true,
+        'include css': true,
+        define: {
+            url: require('stylus').resolver()
+        }
     }))
     .pipe(gulp.dest('css/'))
 });
 
 // Minificar JS
 var scripts = [
-    './vendor/jquery/dist/jquery.js',
-    './vendor/bootstrap/dist/js/bootstrap.js',
-    './vendor/owl.carousel/dist/owl.carousel.js',
-    './vendor/scrollreveal/dist/scrollreveal.js',
-    './vendor/jquery-validation/dist/jquery.validate.js',
-    './vendor/jquery-form/dist/jquery.form.min.js',
+    './vendor/flexibility/flexibility.js',
+    './vendor/jquery/dist/jquery.min.js',
+    './vendor/slick-carousel/slick/slick.js',
+    './vendor/izimodal/js/iziModal.min.js',
     './js/*.js'
 ];
 gulp.task('uglify', function(){
@@ -65,6 +64,7 @@ gulp.task('uglify', function(){
 // Minificar CSS
 gulp.task('minify-css', function() {
     var plugins = [
+        flexibility,
         autoprefixer({grid: false}),
         cssnano()
     ];

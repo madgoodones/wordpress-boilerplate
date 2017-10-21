@@ -78,22 +78,6 @@
 		$(owl).trigger(direction + '.owl.carousel');
 	});
 	/**
-	 * Scroll reveal
-	 * @type event
-	 */
-	window.sr = ScrollReveal({ reset: true });
-	var $reveal = $('.reveal');
-	var fooReveal = {
-		delay    : 350,
-		easing   : 'ease-in-out',
-		origin	 : 'bottom',
-		opacity  : 0,
-		mobile   : false
-	};
-	if ($reveal.length) {
-		sr.reveal('.reveal', fooReveal);
-	}
-	/**
 	 * Send emails
 	 * @type event
 	 */
