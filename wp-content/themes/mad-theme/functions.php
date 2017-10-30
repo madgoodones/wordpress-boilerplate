@@ -118,6 +118,18 @@ function disqus_embed($disqus_shortname) {
   </script>';
 }
 
+if( function_exists('acf_add_options_page') ) {
+ 
+  $option_page = acf_add_options_page(array(
+    'page_title'  => 'Configurações do tema',
+    'menu_title'  => 'Configurações',
+    'menu_slug'   => 'theme-general-settings',
+    'capability'  => 'edit_posts',
+    'redirect'  => false
+  ));
+ 
+}
+
 // Live reload
 if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
   wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
