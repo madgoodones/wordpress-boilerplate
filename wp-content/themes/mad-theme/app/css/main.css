@@ -2023,23 +2023,3 @@ label.error {
   color: #f00;
   font-size: 0.75rem;
 }
-
-  display: none;
-  margin-bottom: 0.625rem;
-}
-.response .message {
-  display: none;
-}
-.response .success {
-  color: #0cff0c;
-}
-.response .error {
-  color: #f00;
-}
-.response .waiting {
-  color: #ff0;
-}
-label.error {
-  color: #f00;
-  font-size: 0.75rem;
-}
