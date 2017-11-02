@@ -28,10 +28,7 @@
 					); ?>
 				</div>
 				<div class="col-xs-12 col-md">
-					<div class="search-box">
-						<label for="search" class="search-box-label fa fa-search"></label>
-						<input type="text" class="search-box-input" id="search" name="s" placeholder="O que você procura?">
-					</div>
+					<?php get_search_form() ?>
 				</div>
 			</div>
 		</div>

@@ -4,7 +4,7 @@
 	 * Menu hover effect
 	 */
 	var $menu = $('.menu'),
-		$menuLinks = $('.menu a'),
+		$menuLinks = $('.menu a:not([data-toggle*="dropdown"])'),
 		$menuHamburger = $('#menuHamburger');
 
 	$menuHamburger.on('click', function(event) {
@@ -19,8 +19,16 @@
 		}, 500);
 	});
 	$window.scroll(function(event) {
-		if ($window.scrollTop() >= 5) $menu.addClass('active');
-		else $menu.removeClass('active');
+		if ($window.scrollTop() >= 5) $menu.addClass('is-active');
+		else $menu.removeClass('is-active');
+	});
+	/**
+	 * Dropdown menu
+	 */
+	$menu.find('li.dropdown').hover(function() {
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+	}, function() {
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 	});
 	/**
 	 * Background parallax
@@ -55,7 +63,7 @@
 	 * Anchor smooth
 	 * @type event
 	 */
-	$('a[href*="#"]:not([href="#"], [href*="#panel"], .hash)').click(function() {
+	$('a[href*="#"]:not([href="#"], [data-toggle*="collapse"], [role*="tab"], [href*="#panel"], .hash)').click(function() {
 	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 	  var target = $(this.hash);
 	  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -68,20 +76,6 @@
 	}
 	});
 	/**
-	 * Anchor smooth
-	 * @type event
-	 */
-	var url = document.location.toString();
-	if ( url.match('#') ) {
-		$('#'+url.split('#')[1]).addClass('in');
-			var cPanelBody = $('#'+url.split('#')[1]);
-			var cPanelHeading = cPanelBody.prev();
-			cPanelHeading.find( ".panel-title a" ).removeClass('collapsed');
-			$('html, body').animate({
-			scrollTop: ($('a[href="'+'#'+url.split('#')[1]+'"]').offset().top) - 150
-		}, 500);
-	}
-	/**
 	* Slick
 	*/
 	$('#slick').slick({
@@ -90,6 +84,74 @@
 		pauseOnDotsHover: true,
 		autoplay: true,
 		cssEase: 'linear',
-		speed: 1000,
+		speed: 3000,
 		fade: true
+	});
+	/**
+	* Pre-posts
+	*/
+	$('#pre-posts').slick({
+		arrows: false,
+		dots: false,
+		autoplay: true,
+		speed: 2000,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		responsive: [
+		    {
+		      breakpoint: 970,
+		      settings: {
+		        slidesToShow: 3,
+		        slidesToScroll: 3,
+		        infinite: true,
+		        dots: true
+		      }
+		    },
+		    {
+		      breakpoint: 600,
+		      settings: {
+		        slidesToShow: 2,
+		        slidesToScroll: 2
+		      }
+		    },
+		    {
+		      breakpoint: 480,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		]
+	});
+	/**
+	* Testimonials
+	*/
+	$('#slick-testimonials').slick({
+		arrows: true,
+		dots: false,
+		autoplay: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: '<button type="button" class="slick-arrows slick-prev"></button>',
+		nextArrow: '<button type="button" class="slick-arrows slick-next"></button>'
+	});
+
+	/**
+	 * Habilitar os modais
+	 */
+	var $iziModal = $(".iziModal"),
+		$main = $('main');
+	if (!$iziModal.length == 0) {
+		$iziModal.iziModal({
+			width: 800,
+			radius: 0,
+			borderBottom: false
+		});
+	}
+	$(document).on('opening', '.iziModal', function (e) {
+		$main.css('filter', 'blur(6px)');
+	});
+	$(document).on('closed', '.iziModal', function (e) {
+		$main.css('filter', 'blur(0)');
 	});

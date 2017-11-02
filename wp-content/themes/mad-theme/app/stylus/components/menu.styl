@@ -1,20 +1,19 @@
-$menuOrange = #ef9454
 // css
 .menu
 	transition(.5s all ease-in-out)
 	fixed: 0 0 auto
 	z-index 5
 	padding 0
-	background-color $menuOrange
+	background-color $white
 	&.active
 		padding rem(3px 0)
-		background-color $menuOrange
+		background-color $white
 		
 		+below(1024px)
 			.menu-container
 				fixed: rem(96px) 0 auto
 				padding rem(25px)
-				background $menuOrange
+				background $white
 				
 	+above(1170px)
 		padding rem(10px 0)
@@ -25,7 +24,7 @@ $menuOrange = #ef9454
 		+below(1024px)
 			fixed: -100% 0 auto
 			padding rem(25px)
-			background $menuOrange
+			background $white
 			
 	&-hamburger
 		padding 0
@@ -61,6 +60,6 @@ $menuOrange = #ef9454
 					padding rem(5px)
 					font-size rem(17px)
 					font-weight 600
-					color $white
+					color $black
 					text-decoration none
 					text-transform uppercase

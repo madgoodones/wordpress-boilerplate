@@ -1,0 +1,41 @@
+.pre-posts
+	padding rem(0 0 40px)
+	&-post
+		position relative
+		display block
+		height rem(400px)
+		margin rem(0 7px)
+		color $white
+		text-decoration none
+		cover()
+		&:hover
+		&:focus
+			color $white
+			text-decoration none
+			.content
+				opacity 1
+				visibility visible
+				height 200px
+		&-wrapper
+			absolute: auto 0 0
+			padding rem(25px)	
+		
+		.title
+			font-size rem(16px)
+			color $white
+			padding rem(0 0 15px)
+			
+		.the-date
+			display block
+			padding rem(10px 0 0)
+			font-weight 300
+		
+		.content
+			height 0
+			overflow hidden
+			opacity 0
+			visibility hidden
+			font-size rem(14px)
+			font-weight 300
+			color $white
+			transition .7s all ease-in-out

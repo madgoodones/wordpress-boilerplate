@@ -1,11 +1,6 @@
-$footer_gray = #434343
-$footer_gray_dark = #313131
-$footer_blue = #3372a4
-$footer_white = #e8e8e8
-
 .footer
 	position relative
-	color $footer_white
+	color $white
 	
 	ul
 		padding 0
@@ -13,49 +8,17 @@ $footer_white = #e8e8e8
 		list-style none
 	
 	a
-		color $footer_white
+		color $white
 		&:hover
 		&:focus
-			color $footer_white
-			text-decoration underline
-	
-	&-corporate
-		padding rem(5px 0)
-		font-size rem(12px)
-		background-color $footer_gray_dark
-		
-		.text-center,
-		.text-left,
-		.text-right
-			text-align center
-		+above(768px)
-			.text-left
-				text-align left
-			.text-right
-				text-align right
-				
-		.padding
-			padding rem(13px 0)
-		
-		ul li
-			display inline-block
-			margin-right rem(20px)
-			font-size rem(32px)
-			&:last-child
-				margin 0
+			color $white
+			text-decoration underline		
 	
 	.widgets
 		position relative
 		overflow hidden
 		zoom 1
-		background-color $footer_gray
-		.svg-bottom
-			position absolute
-			bottom -150px
-			left 0px
-			z-index 0
-			+above(970px)
-				opacity .2
+		background-color $black
 		
 		&-background
 			position relative
@@ -71,12 +34,19 @@ $footer_white = #e8e8e8
 			.title
 				display block
 				font-size rem(18px)
-				font-weight 600
-				color $footer_blue
-				text-transform uppercase
-				
+				color $white
+		
 		&-content
-			margin-bottom rem(15px)
+			padding rem(0 0 15px)
 			font-size rem(14px)
-			color $footer_white
 			
+			.sociais li
+				display inline-block
+				margin-right rem(10px)
+				font-size rem(24px)
+				&:last-child
+					margin 0
+					
+			.corporate p
+				font-size rem(12px)
+				line-height 1.7

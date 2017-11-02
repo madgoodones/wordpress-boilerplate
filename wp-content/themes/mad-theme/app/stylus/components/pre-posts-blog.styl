@@ -1,0 +1,77 @@
+.pre-posts-blog
+	position relative
+	padding-bottom rem(30px)
+		
+	&-thumbnail
+		position relative
+		height rem(150px)
+		overflow hidden
+		+above(768px)
+			height rem(240px)
+		&:hover
+			.pre-posts-blog-thumbnail-cover
+				transform(scale(1.1))
+		
+		&-cover
+			transition(.5s all ease-in-out)
+			cover()
+			absolute: 0
+			size: 100%
+			
+	&-content
+		font-size rem(13px)
+		
+		&-paragraph
+			max-height 60px
+			overflow hidden
+			zoom 1
+			margin-bottom rem(5px)
+			
+			p
+				margin 0
+				font-size rem(13px)
+				
+		.learn-more
+			color $orange
+			text-transform uppercase
+		
+		.header
+			margin rem(10px 0)
+			
+			&-times
+				display block
+				margin rem(0 0 5px)
+				font-size rem(12px)
+				font-weight 600
+				color $black
+				.the-author
+					color $orange
+					text-transform uppercase
+
+			&-title
+				margin rem(0 0 10px)
+				font-size rem(18px)
+				font-weight 600
+				color $blue
+				+above(480px)
+					font-size rem(20px)
+					
+				a
+					color $blackLight
+					text-transform uppercase
+					&:hover
+						color $orange
+						text-decoration none
+
+.pagination
+	size: 100%
+	text-align center
+	text-transform uppercase
+	
+	.page-numbers
+		padding rem(0 5px)
+		font-size rem(20px)
+		font-weight 600
+		color $orange
+	.current
+		color $blue

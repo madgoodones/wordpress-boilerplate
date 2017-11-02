@@ -1,11 +1,20 @@
-<div class="action-specialist">
+<div class="action">
 	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-6">
-				<p class="text">Conheça melhor nossas soluções</p>
+		<div class="row middle-xs center-xs">
+			<div class="col-xs-12 col-md-3">
+				<p class="text">Quero ficar por dentro!</p>
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<a href="#" class="button button-white-blue-dark" data-toggle="modal" data-target="#consult-specialist">CONTRATE UM ESPECIALISTA</a>
+				<form>
+					<div class="row middle-xs">
+						<div class="col-xs-12 col-sm-8">
+							<input type="email" class="input-outline" name="E-mail" placeholder="Digite seu e-mail aqui" required>
+						</div>
+						<div class="col-xs-12 col-sm-4">
+							<a href="#" class="button button-white-black">Enviar</a>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

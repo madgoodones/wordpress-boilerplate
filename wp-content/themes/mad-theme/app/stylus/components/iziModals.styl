@@ -1,0 +1,41 @@
+.iziModal
+	background transparent
+	
+	&-navigate > button
+		opacity 1
+
+	&-columns
+		padding rem(0 15px)
+
+	&-body
+		padding rem(50px 25px)
+		color $white
+		background $blue
+		
+		+below(768px)
+			flex-direction row-reverse
+		
+		.closer
+			float right
+			font-size rem(24px)
+			cursor pointer
+		
+		&-content
+			font-size rem(12px)
+			text-transform uppercase
+			
+		.page-header
+			padding rem(0 0 15px)
+			text-align left
+			
+	.ebooks-modal
+		padding rem(50px)
+		
+		.title
+			display block
+			font-size rem(18px)
+			
+		.author
+			display block
+			font-size rem(14px)
+			

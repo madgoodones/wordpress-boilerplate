@@ -1,0 +1,63 @@
+$white = #FFF
+.sidebar
+	padding rem(0 5px)
+	+above(480px)
+		padding rem(0 25px)
+	
+	&-children
+		max-width rem(400px)
+		margin 0 auto
+		
+	ul
+		list-style none
+		padding 0
+		margin 0
+	
+	&-newsletter
+		padding rem(25px 20px)
+		margin rem(0 auto 20px)
+		font-size rem(20px)
+		color $white
+		text-align center
+		background-color $blackLight
+		
+	&-services
+		
+		li
+			display block
+			margin rem(0 0 20px)
+			text-align right
+			cover()
+			
+		a
+			display block
+			padding rem(22px 30px 20px)
+			font-size rem(38px)
+			font-weight 600
+			color $white
+			text-decoration none
+			text-transform uppercase
+			transition .5s padding ease-in-out
+			&:hover
+			&:focus
+				padding rem(22px 40px 20px 30px)
+				
+	&-widget
+		
+		.widget-title
+			padding rem(15px 20px)
+			font-size rem(20px)
+			color $white
+			text-align center
+			background-color $blackLight
+			
+		li
+			display block
+			padding rem(15px 0)
+			border-bottom rem(2px) solid $black
+			
+			a
+				padding rem(10px 0)
+				font-size rem(14px)
+				color $black
+				text-transform uppercase

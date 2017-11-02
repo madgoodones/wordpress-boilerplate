@@ -1,0 +1,45 @@
+.ebooks
+	padding rem(50px 0)
+	
+	.ebook
+		background-position bottom
+		background-repeat repeat-x
+		+above(1024px)
+			border-bottom rem(70px) solid $white
+			background-image url('../img/pattern-ebooks.png')
+		
+		.row
+			size: 100%
+			+above(1024px)
+				size: 100%, rem(300px)
+				
+		&-container
+			cursor pointer
+			margin rem(0 0 20px)
+			+above(1024px)
+				margin 0
+				
+			> img
+				padding-bottom rem(50px)
+				margin-bottom rem(-50px)
+		
+		&-summary,
+		&-more
+			+above(1024px)
+				margin-bottom rem(-53px)
+				
+		&-more
+			display none
+			+below(1024px)
+				display block !important
+			.button
+				margin rem(16px 0 2px)
+			
+		&-name
+			margin rem(10px 0 2px)
+			font-size rem(16px)
+			color $blue
+		
+		&-author
+			font-size rem(14px)
+			color $orange

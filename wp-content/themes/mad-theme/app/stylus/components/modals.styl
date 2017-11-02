@@ -1,75 +1,40 @@
-$modal_blue = #3b8bcb
-
-.modal
-	text-align center
-	padding 0 !important
-	&:before
-		content ''
-		display inline-block
-		vertical-align middle
-		margin-right -4px
-		+above(992px)
-			height 100%
+.iziModal
+	background transparent
 	
-	&-dialog
-		display inline-block
-		max-width 868px
-		width 100%
-		margin 0 auto
-		vertical-align middle
-		
-	&-content
-		box-shadow(none)
-		cover()
-		min-height 600px
-		padding rem(25px 15px)
+	&-navigate > button
+		opacity 1
+
+	&-columns
+		padding rem(0 15px)
+
+	&-body
+		padding rem(50px 25px)
 		color $white
-		border 0
-		border-radius 0
-		text-align left
-		background-color #181819
-		+above(768px)
-			padding rem(50px)
+		background $blue
 		
-		.modal-title
+		+below(768px)
+			flex-direction row-reverse
+		
+		.closer
+			float right
+			font-size rem(24px)
+			cursor pointer
+		
+		&-content
+			font-size rem(12px)
+			text-transform uppercase
+			
+		.page-header
+			padding rem(0 0 15px)
+			text-align left
+			
+	.ebooks-modal
+		padding rem(50px)
+		
+		.title
+			display block
+			font-size rem(18px)
+			
+		.author
 			display block
 			font-size rem(14px)
-			font-weight 600
-			color $modal_blue
-			text-align left
-			text-transform uppercase
-			.title
-				display block
-				margin rem(0 0 20px)
-				font-size rem(20px)
-				font-weight 600
-				color $white				
-			
-		.modal-text
-			max-height 400px
-			margin-bottom 20px
-			padding 5px
-			overflow-x auto
-			font-size 14px
-			text-align justify
-			
-			.fatura
-				margin-bottom 15px
-				
-		+above(768px)
-			.border-left
-				border-left 1px solid $white
-				
-	&-close
-		box-shadow none
-		text-shadow none
-		opacity 1
-		font-size rem(32px)
-		color $white
-		&:hover
-		&:focus
-			outline none
-			color $white
-				
-	.page-header
-		padding-bottom 20px

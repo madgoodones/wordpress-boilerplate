@@ -1,0 +1,46 @@
+.carousel-testimonials
+	position relative
+	padding 0
+	text-align center
+	border-top rem(100px) solid $white
+	background-color #f2f2f2
+	
+	.carousel
+		center(rem(970px))
+		margin-top rem(-85px)
+
+		.slick-arrows
+			absolute: 50% auto auto 0
+			size: rem(40px), rem(50px)
+			margin-top rem(25px)
+			border 0
+			outline none
+			background-image url('../img/arrow-black.png')
+			background-color transparent
+			background-repeat no-repeat
+			&.slick-next
+				absolute: 50% 0 auto auto
+				transform rotate(180deg)
+		
+		.slide
+			center(rem(680px))
+			padding rem(0 40px 50px)
+
+		.author-avatar
+			size: rem(170px)
+			margin 0 auto
+			border-radius 100%
+			border rem(5px) solid $white
+			background-color $white
+			cover()
+				
+		.author-name,
+		.author-subtitle
+			display block
+			size: 100%
+			font-size rem(16px)
+			font-weight 600
+			
+		.author-subtitle
+			font-weight 400
+

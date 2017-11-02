@@ -34,7 +34,9 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 // Modificando funções do wordpress
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size( 480, 480 );
-add_image_size( 'low-thumbnail', 200, 200, true );
+add_image_size( 'small', 256, 256, false );
+add_image_size( 'banner', 1360, 500, false );
+add_image_size( 'slider', 1360, 768, false );
 show_admin_bar(false);
 
 // Favicon WP-ADMIN e LOGIN
@@ -60,8 +62,6 @@ add_filter ( 'upload_mimes' ,  'habilitarMimes' ) ;
 require_once('inc/wordpress/create-menu.php');
 // Criar post types
 require_once('inc/wordpress/create-post-types.php');
-// Criar post types
-require_once('inc/wordpress/setting-theme.php');
 
 // Remover informações padrões do wordpress
 function my_deregister_scripts(){
@@ -121,8 +121,8 @@ function disqus_embed($disqus_shortname) {
 if( function_exists('acf_add_options_page') ) {
  
   $option_page = acf_add_options_page(array(
-    'page_title'  => 'Configurações do tema',
-    'menu_title'  => 'Configurações',
+    'page_title'  => 'Mad Theme Settings',
+    'menu_title'  => 'Mad Theme',
     'menu_slug'   => 'theme-general-settings',
     'capability'  => 'edit_posts',
     'redirect'  => false

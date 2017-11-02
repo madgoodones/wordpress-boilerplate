@@ -1,6 +1,6 @@
 <?php require_once('inc/protect-abspath.php'); ?>
 <?php get_header() ?>
-	<header class="header-page" role="banner" style="background-image: url('<?= get_template_directory_uri() . '/assets/img/especialista-contabil-tributario.jpg' ?>');">
+	<header class="header-page" role="banner" style="background-image: url('<?= get_template_directory_uri() . '/assets/img/banner-principal.jpg' ?>');">
 		<div class="header-page-caption">
 			<h1 class="title">Página não encontrada</h1>
 		</div>
