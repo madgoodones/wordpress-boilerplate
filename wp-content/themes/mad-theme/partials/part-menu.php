@@ -6,7 +6,7 @@
 			<a href="<?php bloginfo('url') ?>"><img src="<?= $brand ?>" alt="<?php the_title() ?>"></a>
 		</div>
 		<?php endif ?>
-		<div class="col-xs-4 col-md-9">
+		<div class="col-xs-4 col-md-10">
 			<div class="menu-hamburger">
 				<!-- Require css-hamburgers -->
 				<button id="menuHamburger" class="hamburger hamburger--squeeze" type="button">

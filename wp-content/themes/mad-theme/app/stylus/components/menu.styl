@@ -1,30 +1,31 @@
 // css
 .menu
 	transition(.5s all ease-in-out)
-	fixed: 0 0 auto
+	absolute: 0 0 auto
 	z-index 5
 	padding 0
-	background-color $white
-	&.active
+	background-color transparent
+	&.is-active
 		padding rem(3px 0)
-		background-color $white
-		
-		+below(1024px)
+	
+	+below(1024px)
+		&.active 
+			padding rem(3px 0)
+			background-color $black
 			.menu-container
-				fixed: rem(96px) 0 auto
+				absolute: rem(96px) 0 auto
 				padding rem(25px)
-				background $white
+				background $black
 				
 	+above(1170px)
 		padding rem(10px 0)
-		background-color transparent
 		
 	&-container
 		transition .5s all ease-in-out
 		+below(1024px)
-			fixed: -100% 0 auto
+			absolute: -100vh 0 auto
 			padding rem(25px)
-			background $white
+			background $black
 			
 	&-hamburger
 		padding 0
@@ -58,8 +59,25 @@
 				> a
 					display block
 					padding rem(5px)
-					font-size rem(17px)
-					font-weight 600
+					font-size rem(15px)
+					font-weight 400
 					color $black
 					text-decoration none
 					text-transform uppercase
+					
+	.dropdown-menu
+		padding 0
+		border 0
+		border-radius 0
+		
+		
+		> li > a
+			padding rem(10px 15px)
+			font-size rem(16px)
+			
+		>.active>a, 
+		>.active>a:focus, 
+		>.active>a:hover
+			color $white
+			background $blue
+			
