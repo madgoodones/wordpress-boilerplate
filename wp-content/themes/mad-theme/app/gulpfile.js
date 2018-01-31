@@ -83,7 +83,7 @@ gulp.task('minify-css', function() {
 gulp.task('imagemin', function() {
 
     return gulp.src('img/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}')
-        .pipe(wait(1000))
+        .pipe(wait(2000))
         .pipe(image({
             pngquant: true,
             optipng: false,
@@ -107,8 +107,9 @@ gulp.task('copyTemplates', function () {
 })
 gulp.task('assetsVersionReplace', ['copyTemplates'], function () {
   return gulp.src(['assets/css/*.css', 'assets/js/*.js'])
+    .pipe(wait(5000))
     .pipe(assetsVersionReplace({
-      versionsAmount: 3,
+      versionsAmount: 0,
       replaceTemplateList: [
         '../header.php',
         '../footer.php'
@@ -127,5 +128,6 @@ gulp.task('watch', function(){
     gulp.watch('stylus/**/*.styl', ['stylus']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/**/*.js', ['uglify']);
+    gulp.watch(['assets/css/*.css', 'assets/js/*.js'], ['assetsVersionReplace']);
     gulp.watch('img/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}', ['imagemin']);
 });
