@@ -14,11 +14,13 @@ flexibility = require('postcss-flexibility'),
 livereload = require('gulp-livereload'),
 sourcemaps = require('gulp-sourcemaps'),
 wait = require('gulp-wait'),
+usemin = require('gulp-usemin'),
+assetsVersionReplace = require('gulp-assets-version-replace'),
 image = require('gulp-image');
 
 // Copiar todos os arquivos
 gulp.task('copy', function() {
-    return gulp.src(['./{fonts,vendor}/**/*'])
+    return gulp.src(['./{fonts, vendor}/**/*'])
         .pipe(gulp.dest('../assets/'));
 });
 
@@ -46,8 +48,8 @@ gulp.task('stylus', function(){
 // BundleJS
 var scripts = [
     './vendor/flexibility/flexibility.js',
-    './vendor/zepto/zepto.min.js',
-    './vendor/slick-carousel/slick/slick.js',
+    './vendor/jquery/dist/jquery.min.js',
+    './vendor/owl.carousel/dist/owl.carousel.min.js',
     './vendor/izimodal/js/iziModal.min.js',
     './js/*.js'
 ];
@@ -55,11 +57,11 @@ gulp.task('uglify', function(){
     return gulp.src(scripts)
         .pipe(plumber())
         .pipe(sourcemaps.init({loadMaps: true}))
-            .pipe(concat('bundle.js'))
+            .pipe(concat('main.js'))
             .pipe(uglify())
         .pipe(sourcemaps.write('./'))
         .pipe(livereload())
-        .pipe(gulp.dest('../assets/js/'));
+        .pipe(gulp.dest('assets/js/'));
 });
 
 // Minificar CSS
@@ -74,7 +76,7 @@ gulp.task('minify-css', function() {
         .pipe(postcss(plugins))
     .pipe(sourcemaps.write('./'))
     .pipe(livereload())
-    .pipe(gulp.dest('../assets/css/'));
+    .pipe(gulp.dest('assets/css/'));
 });
 
 // Otimizar Imagens
@@ -94,6 +96,25 @@ gulp.task('imagemin', function() {
             concurrent: 10
         }))
         .pipe(gulp.dest('../assets/img/'));
+});
+
+gulp.task('copyTemplates', function () {
+  return gulp.src('./php-templates/*.php')
+        .pipe(usemin({
+            jsmin: uglify()
+        }))
+        .pipe(gulp.dest('../'));
+})
+gulp.task('assetsVersionReplace', ['copyTemplates'], function () {
+  return gulp.src(['assets/css/*.css', 'assets/js/*.js'])
+    .pipe(assetsVersionReplace({
+      versionsAmount: 3,
+      replaceTemplateList: [
+        '../header.php',
+        '../footer.php'
+      ]
+    }))
+    .pipe(gulp.dest('../assets/builded'))
 });
 
 /* Alias */

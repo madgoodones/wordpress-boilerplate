@@ -94,7 +94,7 @@
 		</div>
 	</div>
 </footer>
-<script type="text/javascript" src="<?= get_template_directory_uri() . '/assets/js/bundle.js' ?>" async></script>
+<script type="text/javascript" src="<?= get_template_directory_uri() . '/assets/builded/main.9f917f622706c498f3b9e3aa1c397479.js' ?>" async></script>
 <?php wp_footer() ?>
 </body>
 </html>

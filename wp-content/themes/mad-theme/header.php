@@ -15,7 +15,7 @@
 <meta name="msapplication-navbutton-color" content="#FFF">
 <meta name="msapplication-TileColor" content="#FFF">
 <!-- Links -->
-<link rel="stylesheet" type="text/css" href="<?=get_template_directory_uri() . '/assets/css/main.css'?>">
+<link rel="stylesheet" type="text/css" href="<?=get_template_directory_uri() ?>'/assets/builded/main.a1e05a4c3ce6282d6924a6d1045e3702.css'">
 <link rel="alternate" href="<?php bloginfo('url') ?>" hreflang="pt-br">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>">

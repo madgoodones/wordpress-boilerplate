@@ -28,5 +28,8 @@
     "postcss-flexibility": "^2.0.0",
     "rupture": "^0.6.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-assets-version-replace": "^2.2.1",
+    "gulp-usemin": "^0.3.29"
+  }
 }
