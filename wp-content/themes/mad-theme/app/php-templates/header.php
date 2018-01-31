@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <title><?php wp_title('-', true, 'right'); bloginfo(); ?></title>
+<?php echo get_field('favicon') ? '<link rel="shortcut icon" href="' . get_field('favicon') . '">' : '' ?>
+<?php echo get_field('favicon') ? '<link rel="icon" href="' . get_field('favicon') . '">' : '' ?>
 <meta name="description" content="<?php bloginfo('description'); ?>">
-<!-- Meta tags for mobile - style browser -->
 <meta name="theme-color" content="#313131">
 <meta name="msapplication-navbutton-color" content="#313131">
 <meta name="msapplication-TileColor" content="#313131">

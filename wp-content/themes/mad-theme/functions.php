@@ -38,15 +38,6 @@ add_image_size( 'banner', 1360, 500, false );
 add_image_size( 'slider', 1360, 768, false );
 show_admin_bar(false);
 
-// Favicon WP-ADMIN e LOGIN
-function adicionaFavicon() {
-  $favicon_url = get_template_directory_uri() . '/favicon.ico';
-  echo '<link rel="shortcut icon" href="' . $favicon_url . '">';
-  echo '<link rel="icon" href="' . $favicon_url . '">';
-}
-add_action('login_head', 'adicionaFavicon');
-add_action('admin_head', 'adicionaFavicon');
-
 // Habilidar uploads para tipos de extensão diferentes
 function  habilitarMimes ( $mimes )  {
   $mimes [ 'svg' ]  =  'image/svg+xml' ;

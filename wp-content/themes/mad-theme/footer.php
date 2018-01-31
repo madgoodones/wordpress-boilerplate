@@ -18,7 +18,7 @@
 						if ( $the_loop->have_posts() ) : ?>
 						<ul>
 							<?php while ( $the_loop->have_posts() ) : $the_loop->the_post(); ?>
-							<li>- <a title="<?php the_title() ?>" href="<?php bloginfo('url') ?>/servicos/#<?= get_post_field( 'post_name', get_post() ) ?>"><?php the_title() ?></a></li>
+							<li>- <a title="<?php the_title() ?>" href="<?php bloginfo('url') ?>/servicos/#<?php echo get_post_field( 'post_name', get_post() ) ?>"><?php the_title() ?></a></li>
 							<?php endwhile ?>
 						</ul>
 						<?php endif ?>
@@ -27,7 +27,7 @@
 					<div class="widget-content">
 						<ul class="sociais">
 							<?php while( have_rows('sociais', 'option') ): the_row(); ?>
-							<li><a href="<?= get_sub_field('url') ?>" target="_blank"><i class="fa <?= get_sub_field('icone') ?>"></i></a></li>
+							<li><a href="<?php echo get_sub_field('url') ?>" target="_blank"><i class="fa <?php echo get_sub_field('icone') ?>"></i></a></li>
 							<?php endwhile ?>
 						</ul>
 					</div>
@@ -53,7 +53,7 @@
 						if ( $the_loop->have_posts() ) : ?>
 						<ul>
 							<?php while ( $the_loop->have_posts() ) : $the_loop->the_post(); ?>
-							<li>- <a title="<?php the_title() ?>" href="<?php bloginfo('url') ?>/servicos/#<?= get_post_field( 'post_name', get_post() ) ?>"><?php the_title() ?></a></li>
+							<li>- <a title="<?php the_title() ?>" href="<?php bloginfo('url') ?>/servicos/#<?php echo get_post_field( 'post_name', get_post() ) ?>"><?php the_title() ?></a></li>
 							<?php endwhile ?>
 						</ul>
 						<?php endif ?>
@@ -64,7 +64,7 @@
 						<span class="title">Contato</span>
 					</div>
 					<div class="widget-content">
-						<?= get_field('endereco', 'option') ?>
+						<?php echo get_field('endereco', 'option') ?>
 					</div>
 				</div>
 				<div id="fale-conosco" class="col-xs-6 col-sm-3 pull-right widget">
@@ -94,7 +94,7 @@
 		</div>
 	</div>
 </footer>
-<script type="text/javascript" src="<?= get_template_directory_uri() . '/assets/builded/main.9f917f622706c498f3b9e3aa1c397479.js' ?>" async></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/assets/builded/main.9f917f622706c498f3b9e3aa1c397479.js' ?>" async></script>
 <?php wp_footer() ?>
 </body>
 </html>

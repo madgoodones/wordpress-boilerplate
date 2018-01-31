@@ -1,7 +1,7 @@
 
 <div class="container">
 	<div class="row middle-xs">
-		<?php if ($brand = get_field('logo', 'option')): ?>
+		<?php if ($brand = get_field('logo-v1', 'option')): ?>
 		<div class="col-xs-8 col-md">
 			<a href="<?php bloginfo('url') ?>"><img src="<?= $brand ?>" alt="<?php the_title() ?>"></a>
 		</div>
