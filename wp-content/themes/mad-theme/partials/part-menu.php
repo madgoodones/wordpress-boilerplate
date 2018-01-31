@@ -1,4 +1,4 @@
-<div class="menu">
+
 <div class="container">
 	<div class="row middle-xs">
 		<?php if ($brand = get_field('logo', 'option')): ?>

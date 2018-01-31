@@ -1,10 +1,6 @@
 <?php 
 require_once('inc/protect-abspath.php');
 require_once('inc/navwalker/wp_bootstrap_navwalker.php');
-
-// Vars
-$uri = get_template_directory_uri();
-
 /* * * * * * *
 *   Inserção de Styles e Scripts
 * * * * * * * * * * * * * * * * * * * */
@@ -34,14 +30,13 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 // Modificando funções do wordpress
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size( 480, 480 );
-add_image_size( 'small', 256, 256, false );
 add_image_size( 'banner', 1360, 500, false );
 add_image_size( 'slider', 1360, 768, false );
 show_admin_bar(false);
 
 // Favicon WP-ADMIN e LOGIN
 function adicionaFavicon() {
-  $favicon_url = $uri . '/favicon.ico';
+  $favicon_url = get_template_directory_uri() . '/favicon.ico';
   echo '<link rel="shortcut icon" href="' . $favicon_url . '">';
   echo '<link rel="icon" href="' . $favicon_url . '">';
 }
@@ -70,8 +65,6 @@ function my_deregister_scripts(){
 add_action( 'wp_footer', 'my_deregister_scripts' );
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'wp_head', 'dns-prefetch' );
-remove_action( 'wp_head', 'wp_resource_hints', 2 );
 remove_action ('wp_head', 'rsd_link');
 remove_action( 'wp_head', 'wlwmanifest_link');
 remove_action( 'wp_head', 'rest_output_link_wp_head');
