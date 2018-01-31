@@ -7,16 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <title><?php wp_title('-', true, 'right'); bloginfo(); ?></title>
-<meta name="author" content="<?php bloginfo('name'); ?>">
-<meta name="contact" content="<?php bloginfo('admin_email'); ?>">
 <meta name="description" content="<?php bloginfo('description'); ?>">
 <!-- Meta tags for mobile - style browser -->
-<meta name="theme-color" content="#FFF">
-<meta name="msapplication-navbutton-color" content="#FFF">
-<meta name="msapplication-TileColor" content="#FFF">
+<meta name="theme-color" content="#313131">
+<meta name="msapplication-navbutton-color" content="#313131">
+<meta name="msapplication-TileColor" content="#313131">
 <!-- Links -->
-<link rel="stylesheet" type="text/css" href="<?=get_template_directory_uri() ?>'/assets/builded/main.__placeholder__.css'">
-<link rel="alternate" href="<?php bloginfo('url') ?>" hreflang="pt-br">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>'/assets/builded/main.__placeholder__.css'">
+<link rel="alternate" href="<?php echo get_home_url() ?>" hreflang="pt-br">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

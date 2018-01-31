@@ -1,6 +1,10 @@
 <?php 
-require_once('inc/protect-abspath.php');
-require_once('inc/navwalker/wp_bootstrap_navwalker.php');
+require_once('inc/protect-abspath.php'); // Proteger o arquivo de acesso direto
+require_once('inc/navwalker/wp_bootstrap_navwalker.php'); // Utilizar Navwalker do Bootstrap 3
+require_once('inc/acf-custom-fields/setup.php'); // Opções do Advanced Custom Fields
+require_once('inc/wordpress/create-menu.php'); // Criar menu
+require_once('inc/wordpress/create-post-types.php'); // Criar post types
+
 /* * * * * * *
 *   Inserção de Styles e Scripts
 * * * * * * * * * * * * * * * * * * * */
@@ -53,11 +57,6 @@ add_filter ( 'upload_mimes' ,  'habilitarMimes' ) ;
 /* * * * * * *
 *   Funcões do tema
 * * * * * * * * * * * * * * * * * * * */
-// Criar menu
-require_once('inc/wordpress/create-menu.php');
-// Criar post types
-require_once('inc/wordpress/create-post-types.php');
-
 // Remover informações padrões do wordpress
 function my_deregister_scripts(){
   wp_deregister_script( 'wp-embed' );
@@ -109,18 +108,6 @@ function disqus_embed($disqus_shortname) {
       var disqus_url = "'.get_permalink($post->ID).'";
       var disqus_identifier = "'.$disqus_shortname.'-'.$post->ID.'";
   </script>';
-}
-
-if( function_exists('acf_add_options_page') ) {
- 
-  $option_page = acf_add_options_page(array(
-    'page_title'  => 'Mad Theme Settings',
-    'menu_title'  => 'Mad Theme',
-    'menu_slug'   => 'theme-general-settings',
-    'capability'  => 'edit_posts',
-    'redirect'  => false
-  ));
- 
 }
 
 // Live reload
