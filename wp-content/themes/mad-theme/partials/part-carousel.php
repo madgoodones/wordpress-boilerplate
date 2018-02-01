@@ -6,7 +6,7 @@ $args = array(
 );
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) : ?>
-<header id="slick" class="slick-home" role="banner">
+<header id="owl-home" class="owl-carousel owl-home" role="banner">
   <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
   <div class="item" style="background-image: url('<?php the_post_thumbnail_url('full') ?>');">
     <img class="sr-only" src="<?php the_post_thumbnail_url('high-slider') ?>" alt="<?php the_title() ?>">

@@ -20,7 +20,7 @@ image = require('gulp-image');
 
 // Copiar todos os arquivos
 gulp.task('copy', function() {
-    return gulp.src(['./{fonts, vendor}/**/*'])
+    return gulp.src(['./{fonts,vendor}/**/*'])
         .pipe(gulp.dest('../assets/'));
 });
 
@@ -60,7 +60,6 @@ gulp.task('uglify', function(){
             .pipe(concat('main.js'))
             .pipe(uglify())
         .pipe(sourcemaps.write('./'))
-        .pipe(livereload())
         .pipe(gulp.dest('assets/js/'));
 });
 
@@ -75,7 +74,6 @@ gulp.task('minify-css', function() {
     .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(postcss(plugins))
     .pipe(sourcemaps.write('./'))
-    .pipe(livereload())
     .pipe(gulp.dest('assets/css/'));
 });
 
@@ -115,6 +113,7 @@ gulp.task('assetsVersionReplace', ['copyTemplates'], function () {
         '../footer.php'
       ]
     }))
+    .pipe(livereload())
     .pipe(gulp.dest('../assets/builded'))
 });
 

@@ -717,13 +717,10 @@ main {
 .carousel-testimonials .carousel .author-subtitle {
   font-weight: 400;
 }
-.slick-home {
+.owl-home {
   position: relative;
 }
-.slick-home .slick-slide {
-  height: 100vh;
-}
-.slick-home .item {
+.owl-home .item {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -731,7 +728,7 @@ main {
   min-height: 500px;
   background-position: top center;
 }
-.slick-home .item-caption {
+.owl-home .item-caption {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -747,20 +744,20 @@ main {
   color: #fff;
 }
 @media only screen and (min-width: 600px) {
-  .slick-home .item-caption {
+  .owl-home .item-caption {
     font-size: 1.5rem;
   }
-  .slick-home .item-caption p {
+  .owl-home .item-caption p {
     font-size: 1.5rem;
   }
 }
-.slick-home .item-caption h1,
-.slick-home .item-caption h2,
-.slick-home .item-caption h3,
-.slick-home .item-caption h4,
-.slick-home .item-caption h5,
-.slick-home .item-caption h6,
-.slick-home .item-caption .title {
+.owl-home .item-caption h1,
+.owl-home .item-caption h2,
+.owl-home .item-caption h3,
+.owl-home .item-caption h4,
+.owl-home .item-caption h5,
+.owl-home .item-caption h6,
+.owl-home .item-caption .title {
   position: relative;
   display: block;
   font-size: 2rem;
@@ -770,13 +767,13 @@ main {
   color: #fff;
   line-height: 1.2;
 }
-.slick-home .item-caption h1:before,
-.slick-home .item-caption h2:before,
-.slick-home .item-caption h3:before,
-.slick-home .item-caption h4:before,
-.slick-home .item-caption h5:before,
-.slick-home .item-caption h6:before,
-.slick-home .item-caption .title:before {
+.owl-home .item-caption h1:before,
+.owl-home .item-caption h2:before,
+.owl-home .item-caption h3:before,
+.owl-home .item-caption h4:before,
+.owl-home .item-caption h5:before,
+.owl-home .item-caption h6:before,
+.owl-home .item-caption .title:before {
   content: '';
   position: absolute;
   top: -0.937rem;
@@ -788,13 +785,13 @@ main {
   background: #fff;
 }
 @media only screen and (min-width: 600px) {
-  .slick-home .item-caption h1,
-  .slick-home .item-caption h2,
-  .slick-home .item-caption h3,
-  .slick-home .item-caption h4,
-  .slick-home .item-caption h5,
-  .slick-home .item-caption h6,
-  .slick-home .item-caption .title {
+  .owl-home .item-caption h1,
+  .owl-home .item-caption h2,
+  .owl-home .item-caption h3,
+  .owl-home .item-caption h4,
+  .owl-home .item-caption h5,
+  .owl-home .item-caption h6,
+  .owl-home .item-caption .title {
     font-size: 2.625rem;
   }
 }
