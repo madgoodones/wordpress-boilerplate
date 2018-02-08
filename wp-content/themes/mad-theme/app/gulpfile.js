@@ -30,8 +30,13 @@ gulp.task('clean', function() {
         .pipe(clean({force: true}));
 });
 
+gulp.task('clean-builded', function() {
+    return gulp.src(['../assets/builded/**/*'])
+        .pipe(clean({force: true}));
+});
+
 // Compilar Stylus para CSS
-gulp.task('stylus', function(){
+gulp.task('stylus', ['clean-builded'], function(){
     gulp.src('stylus/main.styl')
     .pipe(plumber())
     .pipe(stylus({
@@ -53,7 +58,7 @@ var scripts = [
     './vendor/izimodal/js/iziModal.min.js',
     './js/*.js'
 ];
-gulp.task('uglify', function(){
+gulp.task('uglify', ['clean-builded'], function(){
     return gulp.src(scripts)
         .pipe(plumber())
         .pipe(sourcemaps.init({loadMaps: true}))
